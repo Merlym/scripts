@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" == "" ]
+then
+echo "Uso: $0 domínio"
+echo "Exemplo: $0 www.google.com.br"
+else
+wget $1 2 /dev/null
+cat index.html | grep "href" | cut -d "/" -f3 | cut -d '"' -f1 | grep "\." | grep -v "(" | grep -v "=" | sort -u parsing_list
+for domain in $(cat parsing_list);
+do host $domain | grep "has address";
+done
+rm index.html parsing_list
+fi

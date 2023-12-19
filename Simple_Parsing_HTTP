@@ -1,0 +1,10 @@
+1: sudo wget www.site.com
+2: Filtrar por "href" dentro do código HTML da página
+3: sudo grep "href" index.htm
+4: sudo grep "href" index.html | cut -d "/" -f 3
+5: sudo grep "href" index.html | cut -d "/" -f 3 | grep "\."
+6: sudo grep "href" index.html | cut -d "/" -f 3 | grep "\." | cut -d '"' -f 1 | grep -v "<li"
+7: sudo grep "href" index.html | cut -d "/" -f 3 | grep "\." | cut -d '"' -f 1 | grep -v "<li" > lista
+8: sudo host www.site.com = Resolve o Endereço IP
+9: for url in $(cat lista);do host $url;done
+10: for url in $(cat lista);do host $url | grep "has address";done
